@@ -1,9 +1,36 @@
-import React from "react";
+import React, { createElement } from "react";
 
 function NavBar() {
   const links = ["home", "about", "projects"];
 
-  return <nav>{/* display an <a> tag for each link here */}</nav>;
+  const listMap = links.map((link) => (
+    <a key={link} href={"#" + link}>
+      {link}
+    </a>
+  ))
+  return (<>
+      <div id="navigation" className="nav-bar">
+        <nav>
+          {listMap}
+        </nav>
+
+      </div>
+    </>
+
+
+  );
 }
 
 export default NavBar;
+
+
+// {
+//   const links = ["home", "about", "projects"];
+
+//   const anchors = links.map((link) => (
+//     <a key={link} href={"#" + link}>
+//       {link}
+//     </a>
+//   ));
+//   return <nav>{anchors}</nav>;
+// }
